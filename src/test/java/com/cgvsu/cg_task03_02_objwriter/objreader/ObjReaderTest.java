@@ -1,8 +1,6 @@
-package com.cgvsu.cg_tast03_02_objwriter.objreader;
+package com.cgvsu.cg_task03_02_objwriter.objreader;
 
 import com.cgvsu.cg_task03_02_objwriter.math.Vector3f;
-import com.cgvsu.cg_task03_02_objwriter.objreader.ObjReader;
-import com.cgvsu.cg_task03_02_objwriter.objreader.ObjReaderException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

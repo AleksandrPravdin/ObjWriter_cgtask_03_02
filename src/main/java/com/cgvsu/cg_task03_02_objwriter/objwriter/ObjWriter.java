@@ -30,28 +30,28 @@ public class ObjWriter {
         }
     }
 
-    protected static void writeVerticesOfModel(PrintWriter printWriter, List<Vector3f> vertices) throws IOException {
+    protected static void writeVerticesOfModel(PrintWriter printWriter, List<Vector3f> vertices) {
         for (Vector3f vertex : vertices) {
             printWriter.println(OBJ_VERTEX_TOKEN + " " + vertex.getX() + " " + vertex.getY() + " " + vertex.getZ());
         }
         printWriter.println();
     }
 
-    protected static void writeTextureVerticesOfModel(PrintWriter printWriter, List<Vector2f> textureVertices) throws IOException {
+    protected static void writeTextureVerticesOfModel(PrintWriter printWriter, List<Vector2f> textureVertices) {
         for (Vector2f vertex : textureVertices) {
             printWriter.println(OBJ_TEXTURE_TOKEN + " " + vertex.getX() + " " + vertex.getY());
         }
         printWriter.println();
     }
 
-    protected static void writeNormalsOfModel(PrintWriter printWriter, List<Vector3f> normals) throws IOException {
+    protected static void writeNormalsOfModel(PrintWriter printWriter, List<Vector3f> normals){
         for (Vector3f normal : normals) {
             printWriter.println(OBJ_NORMAL_TOKEN + " " + normal.getX() + " " + normal.getY() + " " + normal.getZ());
         }
         printWriter.println();
     }
 
-    protected static void writePolygonsOfModel(PrintWriter printWriter, List<Polygon> polygons) throws IOException {
+    protected static void writePolygonsOfModel(PrintWriter printWriter, List<Polygon> polygons){
         for (Polygon polygon : polygons) {
             printWriter.print(modelsPolygonToFaceForObjFile(polygon.getVertexIndices(), polygon.getTextureVertexIndices(), polygon.getNormalIndices()));
             printWriter.println();
@@ -76,7 +76,6 @@ public class ObjWriter {
                 }
                 objFace.append("/").append(normalIndices.get(i) + 1);
             }
-            objFace.append(" ");
 
             if (i != vertexIndices.size() - 1) {
                 objFace.append(" ");
